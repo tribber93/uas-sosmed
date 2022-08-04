@@ -1,0 +1,26 @@
+name: uas_sosmed
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  get: 4.6.5
+  flutter:
+    sdk: flutter
+  font_awesome_flutter: ^10.1.0
+  side_navigation: ^1.0.2
+  google_nav_bar: ^5.0.6
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - assets/images/
+    - assets/logo/
+  uses-material-design: true
