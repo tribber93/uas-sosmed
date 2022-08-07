@@ -1,8 +1,7 @@
 import 'package:get/get.dart';
 
-class DashboardController extends GetxController {
-  //TODO: Implement DashboardController
-  int tabIndex = 0;
+class ProfileController extends GetxController {
+  //TODO: Implement ProfileController
 
   final count = 0.obs;
   @override
@@ -18,12 +17,6 @@ class DashboardController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-  }
-
-  @override
-  void changeTabIndex(int index) {
-    tabIndex = index;
-    update();
   }
 
   void increment() => count.value++;

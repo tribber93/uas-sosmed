@@ -32,7 +32,10 @@ class NavLogin extends StatelessWidget {
                     child: Text("Home"),
                   ),
                   FloatingActionButton.extended(
-                      onPressed: () {}, label: Text("Sign In"))
+                      onPressed: () {
+                        Get.toNamed(Routes.HOME);
+                      },
+                      label: Text("Sign In"))
                 ],
               ),
             )

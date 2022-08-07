@@ -64,7 +64,7 @@ class MobileLogin extends StatelessWidget {
                   ),
                   FloatingActionButton.extended(
                     onPressed: () {
-                      Get.offNamed(Routes.DASHBOARD);
+                      Get.offNamed(Routes.HOME);
                     },
                     label: const Text('Sign in With Google'),
                     icon: const FaIcon(FontAwesomeIcons.google),
