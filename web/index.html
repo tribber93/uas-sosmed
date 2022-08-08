@@ -19,6 +19,7 @@
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="A new Flutter project.">
+  <meta name="google-signin-client_id" content="1049770763236-buqca5hlb8kv4aoliu0v50qjpldd8b08.apps.googleusercontent.com">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -40,6 +41,30 @@
   <script src="flutter.js" defer></script>
 </head>
 <body>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyD8Tz8PH7r_KD_x0Ou6NEjd908WRWW3ES0",
+      authDomain: "uas-sosmed-d42c8.firebaseapp.com",
+      projectId: "uas-sosmed-d42c8",
+      storageBucket: "uas-sosmed-d42c8.appspot.com",
+      messagingSenderId: "1049770763236",
+      appId: "1:1049770763236:web:a14a864dc1bbd946405df1",
+      measurementId: "G-NFKL3T9R76"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js

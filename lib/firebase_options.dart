@@ -44,42 +44,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDNbJdWQEPL8W1iJHHMiOlG9OUWgzoA-WI',
-    appId: '1:817345410698:web:78466f4a5c7048510c1f73',
-    messagingSenderId: '817345410698',
-    projectId: 'my-lambe-app',
-    authDomain: 'my-lambe-app.firebaseapp.com',
-    storageBucket: 'my-lambe-app.appspot.com',
-    measurementId: 'G-1F2F4E2V7S',
+    apiKey: 'AIzaSyD8Tz8PH7r_KD_x0Ou6NEjd908WRWW3ES0',
+    appId: '1:1049770763236:web:a14a864dc1bbd946405df1',
+    messagingSenderId: '1049770763236',
+    projectId: 'uas-sosmed-d42c8',
+    authDomain: 'uas-sosmed-d42c8.firebaseapp.com',
+    storageBucket: 'uas-sosmed-d42c8.appspot.com',
+    measurementId: 'G-NFKL3T9R76',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyANiYjtrxT6lSmxxz75AYYh19hWEC67MMI',
-    appId: '1:817345410698:android:f35c377dbbf21f580c1f73',
-    messagingSenderId: '817345410698',
-    projectId: 'my-lambe-app',
-    storageBucket: 'my-lambe-app.appspot.com',
+    apiKey: 'AIzaSyCZeQPKYObznIbaeDdAdocKdIrPliGb5lQ',
+    appId: '1:1049770763236:android:d7647c30e1199bdd405df1',
+    messagingSenderId: '1049770763236',
+    projectId: 'uas-sosmed-d42c8',
+    storageBucket: 'uas-sosmed-d42c8.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCD6FMUdHAGfEqwhE3yGrj2CGK1C3mHNlE',
-    appId: '1:817345410698:ios:b57ccc9e8c808ee10c1f73',
-    messagingSenderId: '817345410698',
-    projectId: 'my-lambe-app',
-    storageBucket: 'my-lambe-app.appspot.com',
-    iosClientId:
-        '817345410698-t0gb6bf5msgdvdvqd6u44icvhgf378r0.apps.googleusercontent.com',
+    apiKey: 'AIzaSyA6ELvr0zy_8OZe-2jw4CZ-iwGPPpkG5jM',
+    appId: '1:1049770763236:ios:8545e914680b6464405df1',
+    messagingSenderId: '1049770763236',
+    projectId: 'uas-sosmed-d42c8',
+    storageBucket: 'uas-sosmed-d42c8.appspot.com',
+    iosClientId: '1049770763236-gls9trhjjp23e51ern1p5kqulgqvcm3v.apps.googleusercontent.com',
     iosBundleId: 'com.example.uasSosmed',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCD6FMUdHAGfEqwhE3yGrj2CGK1C3mHNlE',
-    appId: '1:817345410698:ios:b57ccc9e8c808ee10c1f73',
-    messagingSenderId: '817345410698',
-    projectId: 'my-lambe-app',
-    storageBucket: 'my-lambe-app.appspot.com',
-    iosClientId:
-        '817345410698-t0gb6bf5msgdvdvqd6u44icvhgf378r0.apps.googleusercontent.com',
+    apiKey: 'AIzaSyA6ELvr0zy_8OZe-2jw4CZ-iwGPPpkG5jM',
+    appId: '1:1049770763236:ios:8545e914680b6464405df1',
+    messagingSenderId: '1049770763236',
+    projectId: 'uas-sosmed-d42c8',
+    storageBucket: 'uas-sosmed-d42c8.appspot.com',
+    iosClientId: '1049770763236-gls9trhjjp23e51ern1p5kqulgqvcm3v.apps.googleusercontent.com',
     iosBundleId: 'com.example.uasSosmed',
   );
 }

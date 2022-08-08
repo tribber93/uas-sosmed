@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:uas_sosmed/app/data/controller/auth_controller.dart';
 import 'package:uas_sosmed/app/routes/app_pages.dart';
 
 class MobileLogin extends StatelessWidget {
-  const MobileLogin({
-    Key? key,
-  }) : super(key: key);
+  final authCon = Get.find<AuthController>();
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +63,7 @@ class MobileLogin extends StatelessWidget {
                   ),
                   FloatingActionButton.extended(
                     onPressed: () {
-                      Get.offNamed(Routes.HOME);
+                      authCon.signInWithGoogle();
                     },
                     label: const Text('Sign in With Google'),
                     icon: const FaIcon(FontAwesomeIcons.google),

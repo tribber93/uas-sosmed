@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:uas_sosmed/app/data/controller/auth_controller.dart';
 import 'package:uas_sosmed/app/routes/app_pages.dart';
 
 class NavLogin extends StatelessWidget {
-  const NavLogin({
-    Key? key,
-  }) : super(key: key);
+  final authCon = Get.find<AuthController>();
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +32,7 @@ class NavLogin extends StatelessWidget {
                   ),
                   FloatingActionButton.extended(
                       onPressed: () {
-                        Get.toNamed(Routes.HOME);
+                        authCon.signInWithGoogle();
                       },
                       label: Text("Sign In"))
                 ],

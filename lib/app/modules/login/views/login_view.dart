@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:get/get.dart';
+import 'package:uas_sosmed/app/data/controller/auth_controller.dart';
 import 'package:uas_sosmed/utils/loginWidget/desktopView.dart';
 import 'package:uas_sosmed/utils/loginWidget/mobileView.dart';
 
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
-  const LoginView({Key? key}) : super(key: key);
+  final authCon = Get.find<AuthController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,9 +32,9 @@ class LoginView extends GetView<LoginController> {
         child: SingleChildScrollView(
           // tampilan Mobile
           child: context.isPhone
-              ? const MobileLogin()
+              ? MobileLogin()
               : // Desktop Login View
-              const DesktopLoginView(),
+              DesktopLoginView(),
         ),
       ),
     );

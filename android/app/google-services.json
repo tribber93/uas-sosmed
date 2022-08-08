@@ -1,34 +1,49 @@
 {
   "project_info": {
-    "project_number": "817345410698",
-    "project_id": "my-lambe-app",
-    "storage_bucket": "my-lambe-app.appspot.com"
+    "project_number": "1049770763236",
+    "project_id": "uas-sosmed-d42c8",
+    "storage_bucket": "uas-sosmed-d42c8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:817345410698:android:f35c377dbbf21f580c1f73",
+        "mobilesdk_app_id": "1:1049770763236:android:d7647c30e1199bdd405df1",
         "android_client_info": {
-          "package_name": "com.example.uas_sosmed"
+          "package_name": "com.sosmed.uas"
         }
       },
       "oauth_client": [
         {
-          "client_id": "817345410698-d8l2o3nqaskifq8jd9u9cssl0qkefqsl.apps.googleusercontent.com",
+          "client_id": "1049770763236-18moq8eeg0qkc0vkv4bv9sbc854jm1ar.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sosmed.uas",
+            "certificate_hash": "003dcac6a0bed773c468fea5b46422fefefc4f28"
+          }
+        },
+        {
+          "client_id": "1049770763236-250ld2o4tud6jr7cg0gncj0aq19cfbgg.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyANiYjtrxT6lSmxxz75AYYh19hWEC67MMI"
+          "current_key": "AIzaSyCZeQPKYObznIbaeDdAdocKdIrPliGb5lQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "817345410698-d8l2o3nqaskifq8jd9u9cssl0qkefqsl.apps.googleusercontent.com",
+              "client_id": "1049770763236-250ld2o4tud6jr7cg0gncj0aq19cfbgg.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1049770763236-gls9trhjjp23e51ern1p5kqulgqvcm3v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.uasSosmed"
+              }
             }
           ]
         }
