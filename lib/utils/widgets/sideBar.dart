@@ -67,7 +67,7 @@ class SideBar extends StatelessWidget {
                           ],
                         ),
                         onTap: () {
-                          Get.toNamed(Routes.HOME);
+                          Get.offNamed(Routes.HOME);
                         },
                       ),
                       const SizedBox(
@@ -86,7 +86,7 @@ class SideBar extends StatelessWidget {
                           ],
                         ),
                         onTap: () {
-                          Get.toNamed(Routes.FRIENDS);
+                          Get.offNamed(Routes.FRIENDS);
                         },
                       ),
                       const SizedBox(
@@ -105,7 +105,7 @@ class SideBar extends StatelessWidget {
                           ],
                         ),
                         onTap: () {
-                          Get.toNamed(Routes.PROFILE);
+                          Get.offNamed(Routes.PROFILE);
                         },
                       ),
                     ]),

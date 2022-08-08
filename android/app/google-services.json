@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "817345410698",
+    "project_id": "my-lambe-app",
+    "storage_bucket": "my-lambe-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817345410698:android:f35c377dbbf21f580c1f73",
+        "android_client_info": {
+          "package_name": "com.example.uas_sosmed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817345410698-d8l2o3nqaskifq8jd9u9cssl0qkefqsl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANiYjtrxT6lSmxxz75AYYh19hWEC67MMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817345410698-d8l2o3nqaskifq8jd9u9cssl0qkefqsl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
