@@ -3,6 +3,7 @@ import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:get/get.dart';
+import 'package:uas_sosmed/app/routes/app_pages.dart';
 import 'package:uas_sosmed/utils/myColors.dart';
 import 'package:uas_sosmed/utils/widgets/sideBar.dart';
 
@@ -109,7 +110,9 @@ class HomeView extends GetView<HomeController> {
                                   Expanded(
                                     flex: 7,
                                     child: ElevatedButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Get.toNamed(Routes.KOMENTAR);
+                                        },
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,

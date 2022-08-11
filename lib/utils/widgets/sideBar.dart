@@ -108,6 +108,32 @@ class SideBar extends StatelessWidget {
                           Get.offNamed(Routes.PROFILE);
                         },
                       ),
+                      const SizedBox(
+                        height: 70,
+                      ),
+                      InkWell(
+                        child: Row(
+                          children: [
+                            Icon(FontAwesomeIcons.arrowRightFromBracket),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Text("Log Out")
+                          ],
+                        ),
+                        onTap: () {
+                          Get.defaultDialog(
+                            title: 'Sign Out',
+                            content: const Text('Yakin ingin keluar?'),
+                            cancel: ElevatedButton(
+                              onPressed: () => Get.back(),
+                              child: const Text('Batal'),
+                            ),
+                            confirm: ElevatedButton(
+                                onPressed: () {}, child: const Text('Ya')),
+                          );
+                        },
+                      ),
                     ]),
               ),
             ],

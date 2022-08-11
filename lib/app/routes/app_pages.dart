@@ -4,6 +4,8 @@ import '../modules/friends/bindings/friends_binding.dart';
 import '../modules/friends/views/friends_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/komentar/bindings/komentar_binding.dart';
+import '../modules/komentar/views/komentar_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
@@ -40,6 +42,11 @@ class AppPages {
       page: () => const ProfileView(),
       binding: ProfileBinding(),
       transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.KOMENTAR,
+      page: () => const KomentarView(),
+      binding: KomentarBinding(),
     ),
   ];
 }

@@ -28,7 +28,7 @@ class ProfileView extends GetView<ProfileController> {
               padding: !context.isPhone
                   ? const EdgeInsets.fromLTRB(10, 10, 60, 10)
                   : const EdgeInsets.all(10),
-              height: Get.height - 21,
+              height: context.isPhone ? Get.height : Get.height - 70,
               width: Get.width,
               color: MyColor.primaryBg,
               child: context.isPhone
@@ -37,40 +37,152 @@ class ProfileView extends GetView<ProfileController> {
                       children: [
                         Expanded(
                           flex: 3,
-                          child: Container(
-                            width: Get.width,
-                            height: Get.height,
-                            color: Colors.blue,
-                            child: Column(children: [
-                              const CircleAvatar(
-                                  radius: 70,
-                                  backgroundColor: Colors.white,
-                                  backgroundImage: NetworkImage(
-                                      "https://miro.medium.com/max/1192/1*gjIVkxipV3d1n17kNu0DLQ.jpeg")),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                "Nama Saya",
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                "NO TI NO LEP",
-                                style: TextStyle(
-                                    fontSize: 16, fontStyle: FontStyle.italic),
-                              ),
-                            ]),
+                          child: SizedBox(
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const [
+                                  CircleAvatar(
+                                      radius: 150,
+                                      backgroundColor: Colors.white,
+                                      backgroundImage: NetworkImage(
+                                          "https://miro.medium.com/max/1192/1*gjIVkxipV3d1n17kNu0DLQ.jpeg")),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    "Nama Saya",
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    "NO TI NO LEP",
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontStyle: FontStyle.italic),
+                                  ),
+                                ]),
                           ),
                         ),
                         Expanded(
                           flex: 5,
-                          child: Container(
-                            height: Get.height,
-                            width: Get.width,
-                            color: Colors.green,
+                          child: SizedBox(
+                            child: ListView.builder(
+                                itemCount: 10,
+                                itemBuilder: (_, index) {
+                                  return Center(
+                                    child: Card(
+                                      child: SizedBox(
+                                        width: context.isPhone
+                                            ? Get.width * 0.8
+                                            : Get.width * 0.5,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 30),
+                                          child: Column(children: [
+                                            // Bagian Yang Memposting
+                                            SizedBox(
+                                              height: 100,
+                                              child: Row(
+                                                children: [
+                                                  const CircleAvatar(
+                                                    radius: 30,
+                                                    backgroundImage: NetworkImage(
+                                                        "https://miro.medium.com/max/1192/1*gjIVkxipV3d1n17kNu0DLQ.jpeg"),
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 20,
+                                                  ),
+                                                  Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Text(
+                                                        "Disini Namanya $index",
+                                                        style: const TextStyle(
+                                                            fontSize: 16,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w500),
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 10,
+                                                      ),
+                                                      Text(
+                                                        "Disini Tanggalnya$index",
+                                                        style: const TextStyle(
+                                                            fontSize: 12),
+                                                      ),
+                                                    ],
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                            // Isi Postingan
+                                            const SizedBox(
+                                              child: Text(
+                                                """AKu adaknd fow alks seorang anak yan bc aboi
+                                    oidoaijuhfiwefw
+                                    adniaoa""",
+                                                style: TextStyle(height: 1.5),
+                                              ),
+                                            ),
+                                            // Tombol Like dan Komen
+                                            const SizedBox(height: 10),
+                                            Row(
+                                              children: [
+                                                Expanded(
+                                                  flex: 5,
+                                                  child: ElevatedButton(
+                                                      onPressed: () {},
+                                                      child: Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: const [
+                                                          Icon(Icons.thumb_up),
+                                                          SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          Text("Like"),
+                                                        ],
+                                                      )),
+                                                ),
+                                                const Spacer(),
+                                                Expanded(
+                                                  flex: 7,
+                                                  child: ElevatedButton(
+                                                      onPressed: () {},
+                                                      child: Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: const [
+                                                          Icon(Icons
+                                                              .chat_bubble),
+                                                          SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          Text("Comment"),
+                                                        ],
+                                                      )),
+                                                )
+                                              ],
+                                            ),
+                                            const SizedBox(
+                                              height: 20,
+                                            ),
+                                          ]),
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }),
                           ),
                         ),
                       ],
