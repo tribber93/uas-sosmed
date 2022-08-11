@@ -3,12 +3,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:line_icons/line_icon.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:uas_sosmed/app/data/controller/auth_controller.dart';
 import 'package:uas_sosmed/app/routes/app_pages.dart';
 
 class SideBar extends StatelessWidget {
-  const SideBar({
-    Key? key,
-  }) : super(key: key);
+  final authCon = Get.find<AuthController>();
 
   @override
   Widget build(BuildContext context) {
@@ -130,7 +129,8 @@ class SideBar extends StatelessWidget {
                               child: const Text('Batal'),
                             ),
                             confirm: ElevatedButton(
-                                onPressed: () {}, child: const Text('Ya')),
+                                onPressed: () => authCon.logout(),
+                                child: const Text('Ya')),
                           );
                         },
                       ),

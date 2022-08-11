@@ -22,7 +22,7 @@ class FriendsView extends GetView<FriendsController> {
               appBarColor: Colors.white,
               title: Text("Teman",
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700))),
-          slider: const SideBar(),
+          slider: SideBar(),
           // Bagian Isi
           child: SingleChildScrollView(
             child: Container(

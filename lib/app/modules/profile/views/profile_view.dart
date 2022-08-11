@@ -21,7 +21,7 @@ class ProfileView extends GetView<ProfileController> {
               appBarColor: Colors.white,
               title: Text("Profil Saya",
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700))),
-          slider: const SideBar(),
+          slider: SideBar(),
           // Bagian Isi
           child: SingleChildScrollView(
             child: Container(

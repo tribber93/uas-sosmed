@@ -4,6 +4,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:uas_sosmed/app/routes/app_pages.dart';
 
 class AuthController extends GetxController {
+  FirebaseAuth auth = FirebaseAuth.instance;
+
   Future signInWithGoogle() async {
     // Trigger the authentication flow
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
@@ -22,5 +24,11 @@ class AuthController extends GetxController {
     return await FirebaseAuth.instance
         .signInWithCredential(credential)
         .then((value) => Get.offAllNamed(Routes.HOME));
+  }
+
+  Future logout() async {
+    await auth.signOut();
+    await GoogleSignIn().signOut();
+    Get.offAllNamed(Routes.LOGIN);
   }
 }

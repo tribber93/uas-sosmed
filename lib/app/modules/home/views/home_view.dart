@@ -22,7 +22,7 @@ class HomeView extends GetView<HomeController> {
               appBarColor: Colors.white,
               title: Text("Beranda",
                   style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700))),
-          slider: const SideBar(),
+          slider: SideBar(),
           // Bagian Isi
           child: Row(children: [
             Container(
