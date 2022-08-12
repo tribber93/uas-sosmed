@@ -9,13 +9,14 @@ class AuthController extends GetxController {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   UserCredential? _userCredential;
   FirebaseAuth auth = FirebaseAuth.instance;
-  late TextEditingController searchFriendsController;
+  late TextEditingController searchFriendsController, statusController;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   void onInit() {
     super.onInit();
     searchFriendsController = TextEditingController();
+    statusController = TextEditingController();
   }
 
   @override
@@ -27,6 +28,7 @@ class AuthController extends GetxController {
   void onClose() {
     super.onClose();
     searchFriendsController.dispose();
+    statusController.dispose();
   }
 
   Future signInWithGoogle() async {
@@ -58,6 +60,7 @@ class AuthController extends GetxController {
         'name': googleUser.displayName,
         'email': googleUser.email,
         'photo': googleUser.photoUrl,
+        'status_id': [],
         'createdAt': _userCredential!.user!.metadata.creationTime.toString(),
         'lastLoginAt':
             _userCredential!.user!.metadata.lastSignInTime.toString(),
@@ -170,8 +173,14 @@ class AuthController extends GetxController {
     return firestore.collection('status').doc(statusId).snapshots();
   }
 
-  Future<void> sendStatus(
-      {String? status, String? type, String? statusId, String? docId}) async {
+  Future<void> sendStatus({
+    String? status,
+    String? type,
+    String? docId,
+  }) async {
+    print(status);
+    print(type);
+    print(docId);
     final isValid = formKey.currentState!.validate();
     if (!isValid) {
       return;
@@ -179,13 +188,14 @@ class AuthController extends GetxController {
     formKey.currentState!.save();
     CollectionReference statusColl = firestore.collection('status');
     CollectionReference usersColl = firestore.collection('users');
-    if (type == 'Add') {
+    var statusId = DateTime.now().toIso8601String();
+    if (type == 'Create') {
       await statusColl.doc(statusId).set({
         'status': status,
         'like': 0,
         'jumlah_komentar': 0,
         'created_by': auth.currentUser!.email,
-        'createdAt': _userCredential!.user!.metadata.creationTime,
+        'createdAt': DateTime.now(),
       }).whenComplete(() async {
         await usersColl.doc(auth.currentUser!.email).set({
           'status_id': FieldValue.arrayUnion([statusId])
