@@ -33,19 +33,19 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.FRIENDS,
-      page: () => const FriendsView(),
+      page: () => FriendsView(),
       binding: FriendsBinding(),
       transition: Transition.noTransition,
     ),
     GetPage(
       name: _Paths.PROFILE,
-      page: () => const ProfileView(),
+      page: () => ProfileView(),
       binding: ProfileBinding(),
       transition: Transition.noTransition,
     ),
     GetPage(
       name: _Paths.KOMENTAR,
-      page: () => const KomentarView(),
+      page: () => KomentarView(),
       binding: KomentarBinding(),
     ),
   ];

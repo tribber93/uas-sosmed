@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 
 import 'package:get/get.dart';
+import 'package:uas_sosmed/app/data/controller/auth_controller.dart';
 import 'package:uas_sosmed/utils/myColors.dart';
 import 'package:uas_sosmed/utils/widgets/sideBar.dart';
 
 import '../controllers/profile_controller.dart';
 
 class ProfileView extends GetView<ProfileController> {
-  const ProfileView({Key? key}) : super(key: key);
+  final authCon = Get.find<AuthController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +34,7 @@ class ProfileView extends GetView<ProfileController> {
               width: Get.width,
               color: MyColor.primaryBg,
               child: context.isPhone
-                  ? const ProfileMobileView()
+                  ? ProfileMobileView()
                   : Row(
                       children: [
                         Expanded(
@@ -40,25 +42,25 @@ class ProfileView extends GetView<ProfileController> {
                           child: SizedBox(
                             child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
+                                children: [
                                   CircleAvatar(
                                       radius: 150,
                                       backgroundColor: Colors.white,
                                       backgroundImage: NetworkImage(
-                                          "https://miro.medium.com/max/1192/1*gjIVkxipV3d1n17kNu0DLQ.jpeg")),
-                                  SizedBox(
+                                          authCon.auth.currentUser!.photoURL!)),
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                   Text(
-                                    "Nama Saya",
-                                    style: TextStyle(fontSize: 20),
+                                    authCon.auth.currentUser!.displayName!,
+                                    style: const TextStyle(fontSize: 20),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
-                                  Text(
+                                  const Text(
                                     "NO TI NO LEP",
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 16,
                                         fontStyle: FontStyle.italic),
                                   ),
@@ -196,24 +198,21 @@ class ProfileView extends GetView<ProfileController> {
 }
 
 class ProfileMobileView extends StatelessWidget {
-  const ProfileMobileView({
-    Key? key,
-  }) : super(key: key);
+  final authCon = Get.find<AuthController>();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const CircleAvatar(
+        CircleAvatar(
             radius: 70,
             backgroundColor: Colors.white,
-            backgroundImage: NetworkImage(
-                "https://miro.medium.com/max/1192/1*gjIVkxipV3d1n17kNu0DLQ.jpeg")),
+            backgroundImage: NetworkImage(authCon.auth.currentUser!.photoURL!)),
         const SizedBox(
           height: 10,
         ),
-        const Text(
-          "Nama Saya",
+        Text(
+          authCon.auth.currentUser!.displayName!,
           style: TextStyle(fontSize: 20),
         ),
         const SizedBox(
@@ -221,7 +220,7 @@ class ProfileMobileView extends StatelessWidget {
         ),
         const Text(
           "NO TI NO LEP",
-          style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
+          style: TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
         ),
         const SizedBox(
           height: 30,

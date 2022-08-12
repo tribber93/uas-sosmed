@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:line_icons/line_icon.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:uas_sosmed/app/data/controller/auth_controller.dart';
 import 'package:uas_sosmed/app/routes/app_pages.dart';
@@ -25,22 +24,25 @@ class SideBar extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                 child: SizedBox(
-                  height: 200,
+                  height: 250,
                   width: Get.width,
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+                      children: [
                         CircleAvatar(
                           radius: 80,
                           backgroundColor: Colors.grey,
-                          backgroundImage: NetworkImage(
-                              "https://miro.medium.com/max/1192/1*gjIVkxipV3d1n17kNu0DLQ.jpeg"),
+                          backgroundImage:
+                              NetworkImage(authCon.auth.currentUser!.photoURL!),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
-                        Text("Si onyet Narsis")
+                        Text(
+                          authCon.auth.currentUser!.displayName!,
+                          style: const TextStyle(fontSize: 22),
+                        )
                       ]),
                 ),
               ),
@@ -57,12 +59,12 @@ class SideBar extends StatelessWidget {
                         child: Row(
                           children: [
                             Get.currentRoute == Routes.HOME
-                                ? Icon(FontAwesomeIcons.house)
-                                : Icon(LineIcons.home),
-                            SizedBox(
+                                ? const Icon(FontAwesomeIcons.house)
+                                : const Icon(LineIcons.home),
+                            const SizedBox(
                               width: 20,
                             ),
-                            Text("Beranda")
+                            const Text("Beranda")
                           ],
                         ),
                         onTap: () {
@@ -76,12 +78,12 @@ class SideBar extends StatelessWidget {
                         child: Row(
                           children: [
                             Get.currentRoute == Routes.FRIENDS
-                                ? Icon(FontAwesomeIcons.solidHeart)
-                                : Icon(FontAwesomeIcons.heart),
-                            SizedBox(
+                                ? const Icon(FontAwesomeIcons.solidHeart)
+                                : const Icon(FontAwesomeIcons.heart),
+                            const SizedBox(
                               width: 20,
                             ),
-                            Text("Teman Saya")
+                            const Text("Teman Saya")
                           ],
                         ),
                         onTap: () {
@@ -95,12 +97,12 @@ class SideBar extends StatelessWidget {
                         child: Row(
                           children: [
                             Get.currentRoute == Routes.PROFILE
-                                ? Icon(FontAwesomeIcons.solidUser)
-                                : Icon(FontAwesomeIcons.user),
-                            SizedBox(
+                                ? const Icon(FontAwesomeIcons.solidUser)
+                                : const Icon(FontAwesomeIcons.user),
+                            const SizedBox(
                               width: 20,
                             ),
-                            Text("Profile")
+                            const Text("Profile")
                           ],
                         ),
                         onTap: () {
@@ -112,7 +114,7 @@ class SideBar extends StatelessWidget {
                       ),
                       InkWell(
                         child: Row(
-                          children: [
+                          children: const [
                             Icon(FontAwesomeIcons.arrowRightFromBracket),
                             SizedBox(
                               width: 20,
